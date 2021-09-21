@@ -48,26 +48,26 @@ require 'cek.php';
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <a class="nav-link" href="upload-goods.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-folder-open></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-folder-open"></i></div>
                                 Upload Goods
                             </a>
                             <a class="nav-link" href="track-goods.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                                 Track Goods
                             </a>
-                            <a class="nav-link disabled" href="index.php">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tag"></i></div>
                                 Stock Material
                             </a>
-                            <a class="nav-link disabled" href="masuk.php">
+                            <a class="nav-link" href="masuk.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-dolly"></i></div>
                                 Material In
                             </a>
-                            <a class="nav-link disabled" href="keluar.php">
+                            <a class="nav-link" href="keluar.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-truck-loading"></i></div>
                                 Material Out
                             </a>
-                            <a class="nav-link disabled" href="rack.php">
+                            <a class="nav-link" href="rack.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-warehouse"></i></div>
                                 Rack Status
                             </a>
@@ -267,12 +267,29 @@ require 'cek.php';
                         <br>
                         <input type="text" name="description" placeholder="Description" class="form-control" required>
                         <br>
-                        <input type="number" name="vendor_id" placeholder="Vendor ID" class="form-control" required>
+
+
+                        <select name="vendor_id" class="form-control">
+                            <?php
+                                $data_vendor = mysqli_query($conn, "SELECT * FROM vendor");
+                                while ($fetcharray = mysqli_fetch_array($data_vendor)) {
+                                    $vendor_name = $fetcharray['vendor_name'];
+                                    $vendor_id = $fetcharray['vendor_id'];
+                            ?>
+
+                            <option value="<?=$vendor_id;?>"> <?=$vendor_id;?> - <?=$vendor_name?> </option>
+                            
+                            <?php
+                                }
+                            ?>
+                        </select>
+                        
+
                         <br>
                         <input type="number" name="snp" placeholder="SNP" class="form-control" required>
                         <br>
-                        <input type="number" name="total_box" placeholder="Total Box" class="form-control" required>
-                        <br>
+                        <input type="hidden" name="total_box" value="0">
+                        
                         <button type="submit" class="btn btn-primary" name="add_material">Submit</button>
                     </div>
                 </form>

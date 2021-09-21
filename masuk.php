@@ -55,22 +55,22 @@ require 'cek.php';
                                 <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                                 Track Goods
                             </a>
-                            <!-- <a class="nav-link" href="index.php">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tag"></i></div>
                                 Stock Material
                             </a>
                             <a class="nav-link" href="masuk.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-dolly"></i></div>
                                 Material In
                             </a>
                             <a class="nav-link" href="keluar.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-truck-loading"></i></div>
                                 Material Out
                             </a>
                             <a class="nav-link" href="rack.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-warehouse"></i></div>
                                 Rack Status
-                            </a> -->
+                            </a>
 
 
                         </div>
@@ -153,10 +153,13 @@ require 'cek.php';
                                                             <div class="modal-body">
                                                                 <input type="hidden" name="masuk_id" value="<?=$masuk_id?>">
                                                                 <input type="hidden" name="material_id" value="<?=$material_id?>">
+                                                                <label class="small mb-1">Description</label>
                                                                 <input type="text" name="description" value="<?=$description?>" class="form-control" required>
                                                                 <br>
+                                                                <label class="small mb-1">Total Box (In)</label>
                                                                 <input type="number" name="total_box_in" value="<?=$total_box_in?>" class="form-control" required>
                                                                 <br>
+                                                                <label class="small mb-1">Week</label>
                                                                 <input type="number" name="week" value="<?=$week?>" class="form-control" required>
                                                                 <br>
                                                                 <button type="submit" class="btn btn-primary" name="edit_material_in">Submit</button>
@@ -174,7 +177,7 @@ require 'cek.php';
                                                 
                                                         <!-- Modal Header -->
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title">Hapus Material In</h4>
+                                                            <h4 class="modal-title">Delete Material In</h4>
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                         </div>
                                                     

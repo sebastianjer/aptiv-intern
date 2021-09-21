@@ -56,15 +56,15 @@ require 'download.php';
                                 <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                                 Track Goods
                             </a>
-                            <a class="nav-link disabled" href="index.php">
+                            <a class="nav-link" href="index.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tag"></i></div>
                                 Stock Material
                             </a>
-                            <a class="nav-link disabled" href="masuk.php">
+                            <a class="nav-link" href="masuk.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-dolly"></i></div>
                                 Material In
                             </a>
-                            <a class="nav-link disabled" href="keluar.php">
+                            <a class="nav-link" href="keluar.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-truck-loading"></i></div>
                                 Material Out
                             </a>
